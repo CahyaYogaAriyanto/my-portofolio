@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+/* 
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -17,10 +17,23 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  background: var(--background);
+  background-color: #0a0a0a;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-borderMove {
+  animation: borderMove 1s linear infinite;
+  background-size: 200% 200%;
 }
