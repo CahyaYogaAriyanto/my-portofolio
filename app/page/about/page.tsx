@@ -1,8 +1,8 @@
-import Button from "@/app/components/button/page";
-import Caption from "../../components/caption/page";
-import EducationFlow from "../../components/educationFlow/page";
-import Icon from "../../components/icon/page";
-import SkillsSection from "../../components/skill/page";
+import Button from "@/app/components/button/Button";
+import Caption from "../../components/caption/Caption";
+import EducationFlow from "../../components/educationFlow/EducationFlow";
+import Icon from "../../components/icon/Icon";
+import SkillsSection from "../../components/skill/Skill";
 
 export default function About() {
   return (

@@ -1,6 +1,6 @@
 "use client";
 import usePortfolio from "../../core/services";
-import Icon from "../icon/page";
+import Icon from "../icon/Icon";
 
 type PortfolioKeys = "caption" | "total_project" | "on_progres"
 interface CaptionProps {
