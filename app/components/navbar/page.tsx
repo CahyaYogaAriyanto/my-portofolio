@@ -86,7 +86,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="md:hidden h-full items-center w-full bg-red backdrop-blur-md fixed text-white uppercase flex flex-col gap-5 p-6">
+        <div className="fixed inset-0 z-[999] mt-30 md:hidden h-full items-center w-full bg-red backdrop-blur-md text-white uppercase flex flex-col gap-5 p-6">
           <Link
             href="/"
             className={

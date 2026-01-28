@@ -1,14 +1,16 @@
+import Button from "@/app/components/button/page";
 import Caption from "../../components/caption/page";
 import EducationFlow from "../../components/educationFlow/page";
 import Icon from "../../components/icon/page";
-import Button from "../../components/Button/page";
 import SkillsSection from "../../components/skill/page";
 
 export default function About() {
   return (
     <>
+      {/* <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-10 md:gap-9 px-5 md:px-20 py-10"> */}
       <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-10 md:gap-9 px-5 md:px-20 py-10">
-        <div className="flex flex-col justify-center md:items-end items-center w-full md:w-1/2 xl:w-full gap-3">
+
+        <div className="flex flex-col justify-center md:items-end items-center w-full md:w-1/2 xl:w-full gap-3 order-2 md:order-1">
           <div className="flex flex-col gap-1 w-full md:w-full text-center md:p-5 md:pt-5 lg:pt-15 p-2 md:text-left ">
             <div className="flex items-center gap-2 md:justify-start justify-center">
               <div className="h-px bg-gray-300 w-10 md:w-14"></div>
@@ -30,16 +32,20 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="flex justify-end items-center">
-                 <img className="h-[50%] w-auto top-0 right-0 md:w-full md:h-full drop-shadow-[0_0_3px_white] drop-shadow-[0_0_6px_white]"
-                     src="/yoga.png" 
-                     alt="Foto Profil"
-                     style={{ top :0,right :0,opacity:1,zIndex:-1,boxShadow:'10',
-                         WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
-                         maskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
-                     }}
-                 />
+        {/* <div className="flex justify-end items-center"> */}
+        <div className="flex justify-center items-center order-1 md:order-2">
+          <img
+            className="w-[70%] md:w-full md:h-full drop-shadow-[0_0_3px_white] drop-shadow-[0_0_6px_white]"
+            src="/yoga.png"
+            alt="Foto Profil"
+            style={{
+              opacity: 1,
+              WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
+              maskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
+            }}
+          />
         </div>
+
       </div>
       <SkillsSection/>
       <EducationFlow/>
