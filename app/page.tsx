@@ -1,4 +1,4 @@
-import About from "./page/about/page";
+import About from "./about/page";
 
 export default function HomePage(){
     return(
