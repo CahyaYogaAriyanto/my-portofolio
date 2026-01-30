@@ -1,7 +1,8 @@
 "use client";
+import Caption from '@/app/components/caption/Caption';
+import ExampleProject from '@/app/components/exampleProject/ExampleProject';
 import { motion } from 'framer-motion';
-import Caption from '../components/caption/Caption';
-import ExampleProject from '../components/exampleProject/ExampleProject';
+
 
 export default function Project() {
   return (

@@ -9,6 +9,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -35,7 +36,6 @@ export default function Navbar() {
         <div className="text-white font-bold text-xl">
           YogaDev
         </div>
-
         <ul className="hidden md:flex gap-x-20 uppercase text-white mx-auto">
           <li>
             <Link
@@ -52,9 +52,9 @@ export default function Navbar() {
 
           <li>
             <Link
-              href="/page/project"
+              href="/pages/project"
               className={
-                pathname === "/page/project"
+                pathname === "/pages/project"
                   ? "text-purple-700 font-semibold"
                   : "hover:text-blue-300"
               }
@@ -65,9 +65,9 @@ export default function Navbar() {
 
           <li>
             <Link
-              href="/page/contact"
+              href="/pages/contact"
               className={
-                pathname === "/page/contact"
+                pathname === "/pages/contact"
                   ? "text-purple-700 font-semibold"
                   : "hover:text-blue-300"
               }
@@ -100,9 +100,9 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="/page/project"
+            href="/pages/project"
             className={
-              pathname === "/page/project"
+              pathname === "/pages/project"
                 ? "text-purple-700 font-semibold"
                 : "hover:text-blue-300"
             }
@@ -112,9 +112,9 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="/page/contact"
+            href="/pages/contact"
             className={
-              pathname === "/page/contact"
+              pathname === "/pages/contact"
                 ? "text-purple-700 font-semibold"
                 : "hover:text-blue-300"
             }
