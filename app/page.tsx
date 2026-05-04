@@ -168,7 +168,7 @@ export default function About() {
             transition={{
               duration: 3,
               repeat: Infinity,
-              ease: "easeInOut",
+              ease: [0.6, 0.01, 0.05, 0.95],
             }}
             className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur-3xl opacity-30"
           />
