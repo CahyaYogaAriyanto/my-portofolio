@@ -1,29 +1,243 @@
 @import "tailwindcss";
-/* 
+
 :root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+.light {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a1a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
+* {
+  scroll-behavior: smooth;
+}
 
 body {
-  background-color: #0a0a0a;
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Light Mode Adjustments */
+.light {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+}
+
+.light body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #1a1a1a;
+}
+
+/* Animated gradient background */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Light mode background overlay untuk readability */
+.light body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Glass effect untuk light mode */
+.light .glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+}
+
+/* Text colors untuk light mode */
+.light .text-white {
+  color: #1a1a1a !important;
+}
+
+.light .text-gray-100 {
+  color: #2d3748 !important;
+}
+
+.light .text-gray-200 {
+  color: #4a5568 !important;
+}
+
+.light .text-gray-300 {
+  color: #4a5568 !important;
+}
+
+.light .text-gray-400 {
+  color: #718096 !important;
+}
+
+.light .text-gray-500 {
+  color: #a0aec0 !important;
+}
+
+/* Background colors untuk light mode */
+.light .bg-gray-900 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.light .bg-gray-800 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.light .bg-gray-700 {
+  background-color: rgba(247, 250, 252, 0.9) !important;
+}
+
+.light .bg-black {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.light .bg-black\/50 {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.light .bg-black\/80 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Border colors untuk light mode */
+.light .border-gray-700 {
+  border-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+.light .border-gray-800 {
+  border-color: rgba(139, 92, 246, 0.15) !important;
+}
+
+.light .border-white\/10 {
+  border-color: rgba(139, 92, 246, 0.15) !important;
+}
+
+.light .border-white\/20 {
+  border-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+/* Slate colors untuk light mode */
+.light .bg-slate-800 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.light .border-slate-700 {
+  border-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+.light .text-slate-300 {
+  color: #4a5568 !important;
+}
+
+/* Placeholder colors */
+.light .placeholder-gray-400::placeholder {
+  color: #a0aec0 !important;
+}
+
+.light .placeholder-gray-500::placeholder {
+  color: #718096 !important;
+}
+
+/* Background orbs untuk light mode - lebih colorful */
+.light .bg-purple-600\/20 {
+  background-color: rgba(139, 92, 246, 0.15) !important;
+}
+
+.light .bg-blue-600\/20 {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+.light .bg-purple-500\/10 {
+  background-color: rgba(139, 92, 246, 0.1) !important;
+}
+
+.light .bg-purple-600\/10 {
+  background-color: rgba(139, 92, 246, 0.1) !important;
+}
+
+.light .bg-blue-600\/10 {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Fixed background untuk light mode */
+.light .fixed.inset-0.-z-20 {
+  background: transparent !important;
+}
+
+/* Shadow adjustments */
+.light .shadow-xl {
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.15) !important;
+}
+
+.light .shadow-2xl {
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.2) !important;
+}
+
+/* Hover states untuk light mode */
+.light .hover\:bg-purple-500\/20:hover {
+  background-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+.light .hover\:bg-white:hover {
+  background-color: rgba(247, 250, 252, 0.95) !important;
+}
+
+.light .hover\:text-purple-300:hover {
+  color: #7c3aed !important;
+}
+
+.light .hover\:text-purple-600:hover {
+  color: #7c3aed !important;
+}
+
+/* Gradient text tetap colorful di light mode */
+.light .gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animate pulse untuk light mode */
+.light .animate-pulse {
+  animation: pulse-light 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-light {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Animated Gradient Border */
 @keyframes borderMove {
   0% {
     background-position: 0% 50%;
@@ -36,4 +250,93 @@ body {
 .animate-borderMove {
   animation: borderMove 1s linear infinite;
   background-size: 200% 200%;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow Effect */
+.glow {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3),
+              0 0 40px rgba(139, 92, 246, 0.2),
+              0 0 60px rgba(139, 92, 246, 0.1);
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.8);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #764ba2 0%, #667eea 100%);
 }
